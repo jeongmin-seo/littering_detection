@@ -8,6 +8,7 @@
     <ClCompile Include="EventDetector.cpp">
       <Filter>Event Detector</Filter>
     </ClCompile>
+    <ClCompile Include="dku_types.hpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Frame Grabbing">

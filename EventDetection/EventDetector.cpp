@@ -20,6 +20,8 @@ bool CEventDetector::Init()
 	{
 		Terminate();
 	}
+	is_init_ = true;
+	return is_init_;
 }
 
 
@@ -29,6 +31,10 @@ bool CEventDetector::Terminate()
 	{
 		return true;
 	}
+	vec_mat_frame_buffer_.clear();
+	vec_prev_detections_.clear();
+	is_init_ = false;
+	return !is_init_;
 }
 
 

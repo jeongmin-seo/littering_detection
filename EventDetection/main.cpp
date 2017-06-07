@@ -93,15 +93,19 @@ int main(int argc, char** argv)
 
 	cv::namedWindow(str_frame_window_name);
 	grabber.Init(str_input_video_path);
+	event_detector.Init();
 	for (;;)
 	{
 		mat_cur_frame = grabber.GetFrame();
 		if (mat_cur_frame.empty()) { break; }
 		cv::imshow(str_frame_window_name, mat_cur_frame);
+
+		event_detector.Run(mat_cur_frame, grabber.GetCurFrameIndex());
 		cv::waitKey(10);
-
-
 	}
+
+	grabber.Terminate();
+	event_detector.Terminate();
 
 	return 0;
 }

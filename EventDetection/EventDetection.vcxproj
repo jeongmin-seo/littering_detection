@@ -148,6 +148,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="dku_types.hpp" />
     <ClCompile Include="EventDetector.cpp" />
     <ClCompile Include="FrameGrabber.cpp" />
     <ClCompile Include="main.cpp" />
