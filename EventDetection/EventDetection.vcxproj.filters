@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="FrameGrabber.cpp">
+      <Filter>Frame Grabbing</Filter>
+    </ClCompile>
+    <ClCompile Include="EventDetector.cpp">
+      <Filter>Event Detector</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Frame Grabbing">
+      <UniqueIdentifier>{bd26b3d3-a06a-4738-bd56-073bc17beebf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Event Detector">
+      <UniqueIdentifier>{1c0c2571-c848-4a07-99ad-af3d05ed06a6}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="FrameGrabber.h">
+      <Filter>Frame Grabbing</Filter>
+    </ClInclude>
+    <ClInclude Include="EventDetector.h">
+      <Filter>Event Detector</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
