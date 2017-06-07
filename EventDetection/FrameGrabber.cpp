@@ -41,6 +41,7 @@ bool CFrameGrabber::Terminate()
 
 cv::Mat CFrameGrabber::GetFrame()
 {
+	assert(is_capture_opened_);
 	cv::Mat mat_cur_frame;
 	video_capture_ >> mat_cur_frame;
 	if (!mat_cur_frame.empty())

@@ -40,6 +40,7 @@ bool CEventDetector::Terminate()
 
 void CEventDetector::Run(const cv::Mat input_frame, const int frame_number)
 {
+	assert(is_init_);
 	/*
 		짜야하는 기능
 		1) 입력 frame (input_frame)에 대한  Background subtraction 결과 만들기
