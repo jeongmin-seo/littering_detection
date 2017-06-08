@@ -90,7 +90,7 @@ int main(int argc, char** argv)
 	CFrameGrabber grabber;
 	CEventDetector event_detector;
 	cv::Mat mat_cur_frame;
-
+	
 	cv::namedWindow(str_frame_window_name);
 	grabber.Init(str_input_video_path);
 	event_detector.Init();
