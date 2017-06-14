@@ -96,8 +96,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <PrecompiledHeader>
-      </PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -130,8 +129,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
-      <PrecompiledHeader>
-      </PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -150,12 +148,21 @@
   <ItemGroup>
     <ClCompile Include="dku_types.hpp" />
     <ClCompile Include="EventDetector.cpp" />
+    <ClCompile Include="fhog.cpp" />
     <ClCompile Include="FrameGrabber.cpp" />
+    <ClCompile Include="kcftracker.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="runtracker.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="EventDetector.h" />
+    <ClInclude Include="ffttools.hpp" />
+    <ClInclude Include="fhog.hpp" />
     <ClInclude Include="FrameGrabber.h" />
+    <ClInclude Include="kcftracker.hpp" />
+    <ClInclude Include="labdata.hpp" />
+    <ClInclude Include="recttools.hpp" />
+    <ClInclude Include="tracker.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -101,7 +101,8 @@ int main(int argc, char** argv)
 		cv::imshow(str_frame_window_name, mat_cur_frame);
 
 		event_detector.Run(mat_cur_frame, grabber.GetCurFrameIndex());
-		cv::waitKey(10);
+		if (cv::waitKey(10) == 27)
+			break;
 	}
 
 	grabber.Terminate();

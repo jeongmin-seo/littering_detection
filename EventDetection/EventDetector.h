@@ -8,7 +8,7 @@
 #pragma once
 
 #include "dku_types.hpp"
-
+#include "kcftracker.hpp"
 
 
 class CEventDetector
@@ -23,7 +23,6 @@ public:
 	bool Terminate();
 	void Run(const cv::Mat input_frame, const int frame_number = -1);
 	void CEventDetector::SavePrevDetection();
-	void CEventDetector::DetectionCurrFrame(cv::Mat contourImg, int index);
 
 protected:
 
@@ -37,6 +36,8 @@ protected:
 	std::vector<CDetectedObject> vec_curr_detections_;
 
 	cv::Ptr<cv::BackgroundSubtractor> m_pBGS;
+	std::vector<KCFTracker> tracker;
+	cv::Rect result;
 };
 
 //()()

@@ -21,7 +21,7 @@ bool CEventDetector::Init()
 	}
 	is_init_ = true;
 	m_pBGS = cv::createBackgroundSubtractorMOG2();
-	
+
 	return is_init_;
 }
 
@@ -46,31 +46,7 @@ void CEventDetector::SavePrevDetection()
 	
 	vec_curr_detections_.clear();
 }
-//
-//void CEventDetector::DetectionCurrFrame(cv::Mat contourImg, int index)
-//{
-//	CDetectedObject buffDetectedObject;
-//	std::vector<std::vector<cv::Point>> contours;
-//	cv::findContours(contourImg,
-//		contours,
-//		CV_RETR_EXTERNAL,       // retrieve the external contours
-//		CV_CHAIN_APPROX_NONE);  // all pixels of each contours
-//
-//	std::vector< std::vector< cv::Point> >::iterator itc = contours.begin();
-//	int curr_id = 0;
-//	while (itc != contours.end()) {
-//		//Create bounding rect of object
-//		//rect draw on origin image 
-//		buffDetectedObject.id = curr_id;
-//		buffDetectedObject.frame_index = index;
-//		buffDetectedObject.bounding_box = boundingRect(cv::Mat(*itc));
-//		vec_curr_detections_.push_back(buffDetectedObject);
-//
-//		//cv::rectangle(input_frame, buffDetectedObject.bounding_box.tl(), buffDetectedObject.bounding_box.br(), CV_RGB(255, 0, 0), 2);
-//		++itc;
-//		curr_id++;
-//	}
-//}
+
 
 void CEventDetector::Run(const cv::Mat input_frame, const int frame_number)
 {
@@ -88,7 +64,7 @@ void CEventDetector::Run(const cv::Mat input_frame, const int frame_number)
 	//cv::imshow("FG Mask MOG 2", binaryImg);
 
 
-	//********************************************** 멤버함수로 빠질 수 있을까!
+	//********************************************** 
 	//contourImg = binaryImg.clone();
 	std::vector<std::vector<cv::Point>> contours;
 	cv::findContours(binaryImg,
@@ -104,6 +80,7 @@ void CEventDetector::Run(const cv::Mat input_frame, const int frame_number)
 		buffDetectedObject.id = curr_id;
 		buffDetectedObject.frame_index = frame_number;
 		buffDetectedObject.bounding_box = boundingRect(cv::Mat(*itc));
+		if (buffDetectedObject.bounding_box.width <= 0 || buffDetectedObject.bounding_box.height <= 0) { continue; }
 		vec_curr_detections_.push_back(buffDetectedObject);
 		
 		cv::rectangle(input_frame, buffDetectedObject.bounding_box.tl(),buffDetectedObject.bounding_box.br(), CV_RGB(255, 0, 0),2);
@@ -111,21 +88,37 @@ void CEventDetector::Run(const cv::Mat input_frame, const int frame_number)
 		curr_id++;
 	}
 	//************************************************
+	
+	//*************************** tracking code 수정해야할 부분!
+	tracker.resize(vec_prev_detections_.size());
+	if(!vec_prev_detections_.empty())
+	{
+		for (int prevDetectionSize = 0; prevDetectionSize < vec_prev_detections_.size();prevDetectionSize++)
+		{
+			tracker[prevDetectionSize].init(vec_prev_detections_[prevDetectionSize].bounding_box,input_frame);
+			cv::rectangle(input_frame, vec_prev_detections_[prevDetectionSize].bounding_box.tl(), 
+				vec_prev_detections_[prevDetectionSize].bounding_box.br(), cv::Scalar(0, 255, 255), 1, 8);
 
-	SavePrevDetection();
+		}
+	}
+	
+	if (!tracker.empty())
+	{
+		for (int i = 0;i < tracker.size();i++)
+		{
+			result = tracker[i].update(input_frame);
+			cv::rectangle(input_frame, result.tl(), result.br(), cv::Scalar(0, 255, 255), 1, 8);
+		}
+	}
+	//***********************************
 	cv::imshow("labeling", input_frame);
+	
+	
+	tracker.clear();
+	vec_prev_detections_.clear();
+	SavePrevDetection();
 
 
-	/*
-		짜야하는 기능
-		1) 입력 frame (input_frame)에 대한  Background subtraction 결과 만들기
-			참고1: http://docs.opencv.org/trunk/d1/dc5/tutorial_background_subtraction.html
-			참고2: http://study.marearts.com/2014/04/opencv-study-background-subtraction-and.html
-		2) background subtraction으로부터 shadow 제거하고 box구하기 (참고2 참고)
-		3) 구한 box로 CDetectedObject 객체의 vector 만들기 -> vec_prev_detections_에 저장 
-		4) 이전 frame의 vec_prev_detections를 이용하여, 현재 frame에서 추적하기
-			참고3: https://www.learnopencv.com/object-tracking-using-opencv-cpp-python/
-	*/
 }
 
 //()()

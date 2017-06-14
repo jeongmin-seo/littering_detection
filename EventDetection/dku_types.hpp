@@ -2,6 +2,9 @@
 
 #include "opencv2/opencv.hpp"
 
+
+
+
 enum OBJECT_CATEGORY 
 { 
 	PEDESTRIAN = 0, 
@@ -18,7 +21,7 @@ public:
 	int id;
 	OBJECT_CATEGORY category;
 	int frame_index;
-	cv::Rect bounding_box;
+	cv::Rect2d bounding_box; //
 };
 
 class CTrackedObject

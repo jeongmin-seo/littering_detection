@@ -9,6 +9,15 @@
       <Filter>Event Detector</Filter>
     </ClCompile>
     <ClCompile Include="dku_types.hpp" />
+    <ClCompile Include="fhog.cpp">
+      <Filter>tracker</Filter>
+    </ClCompile>
+    <ClCompile Include="kcftracker.cpp">
+      <Filter>tracker</Filter>
+    </ClCompile>
+    <ClCompile Include="runtracker.cpp">
+      <Filter>tracker</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Frame Grabbing">
@@ -17,6 +26,9 @@
     <Filter Include="Event Detector">
       <UniqueIdentifier>{1c0c2571-c848-4a07-99ad-af3d05ed06a6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="tracker">
+      <UniqueIdentifier>{f6cf1344-71f4-4f89-83ce-699013f355dd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FrameGrabber.h">
@@ -24,6 +36,24 @@
     </ClInclude>
     <ClInclude Include="EventDetector.h">
       <Filter>Event Detector</Filter>
+    </ClInclude>
+    <ClInclude Include="ffttools.hpp">
+      <Filter>tracker</Filter>
+    </ClInclude>
+    <ClInclude Include="fhog.hpp">
+      <Filter>tracker</Filter>
+    </ClInclude>
+    <ClInclude Include="kcftracker.hpp">
+      <Filter>tracker</Filter>
+    </ClInclude>
+    <ClInclude Include="labdata.hpp">
+      <Filter>tracker</Filter>
+    </ClInclude>
+    <ClInclude Include="recttools.hpp">
+      <Filter>tracker</Filter>
+    </ClInclude>
+    <ClInclude Include="tracker.h">
+      <Filter>tracker</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
