@@ -9,6 +9,7 @@
 
 #include "dku_types.hpp"
 #include "kcftracker.hpp"
+#include "opencv2\videoio.hpp"
 
 
 class CEventDetector
@@ -36,8 +37,13 @@ protected:
 	std::vector<CDetectedObject> vec_curr_detections_;
 
 	cv::Ptr<cv::BackgroundSubtractor> m_pBGS;
+	//std::vector<KCFTracker> currtracker;
+	//std::vector<KCFTracker> nexttracker;
 	std::vector<KCFTracker> tracker;
 	cv::Rect result;
+	cv::VideoWriter video;
+	int fourcc;
+
 };
 
 //()()
