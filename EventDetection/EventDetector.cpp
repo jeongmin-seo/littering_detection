@@ -67,9 +67,9 @@ void CEventDetector::Run(const cv::Mat input_frame, const int frame_number)
 	m_pBGS->apply(input_frame, fgMaskMOG2);
 	cv::morphologyEx(fgMaskMOG2, binaryImg, CV_MOP_CLOSE, element);
 	cv::threshold(binaryImg, binaryImg, 128, 255, CV_THRESH_BINARY);  //Shadow delete, Binary
-	//cv::imshow("FG Mask MOG 2", binaryImg);
+	cv::imshow("FG Mask MOG 2", binaryImg);
 
-
+	
 	//********************************************** 
 	//contourImg = binaryImg.clone();
 	std::vector<std::vector<cv::Point>> contours;
