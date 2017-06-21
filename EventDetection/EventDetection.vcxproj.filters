@@ -18,6 +18,9 @@
     <ClCompile Include="runtracker.cpp">
       <Filter>tracker</Filter>
     </ClCompile>
+    <ClCompile Include="hannju_visualize.cpp">
+      <Filter>helpers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Frame Grabbing">
@@ -28,6 +31,9 @@
     </Filter>
     <Filter Include="tracker">
       <UniqueIdentifier>{f6cf1344-71f4-4f89-83ce-699013f355dd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="helpers">
+      <UniqueIdentifier>{1ad44362-9d09-422f-8245-8f3efe127f04}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -54,6 +60,9 @@
     </ClInclude>
     <ClInclude Include="tracker.h">
       <Filter>tracker</Filter>
+    </ClInclude>
+    <ClInclude Include="haanju_visualize.hpp">
+      <Filter>helpers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

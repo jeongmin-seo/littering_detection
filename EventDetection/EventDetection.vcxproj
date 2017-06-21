@@ -150,6 +150,7 @@
     <ClCompile Include="EventDetector.cpp" />
     <ClCompile Include="fhog.cpp" />
     <ClCompile Include="FrameGrabber.cpp" />
+    <ClCompile Include="hannju_visualize.cpp" />
     <ClCompile Include="kcftracker.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="runtracker.cpp" />
@@ -159,6 +160,7 @@
     <ClInclude Include="ffttools.hpp" />
     <ClInclude Include="fhog.hpp" />
     <ClInclude Include="FrameGrabber.h" />
+    <ClInclude Include="haanju_visualize.hpp" />
     <ClInclude Include="kcftracker.hpp" />
     <ClInclude Include="labdata.hpp" />
     <ClInclude Include="recttools.hpp" />
