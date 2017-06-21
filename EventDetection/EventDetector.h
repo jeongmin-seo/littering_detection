@@ -7,9 +7,9 @@
 ******************************************************************************/
 #pragma once
 
-#include "dku_types.hpp"
 #include "opencv2\videoio.hpp"
-
+#include "dku_types.hpp"
+#include "DetectorCrosstalk.hpp"
 
 class CEventDetector
 {
@@ -49,6 +49,9 @@ protected:
 	cv::Ptr<cv::BackgroundSubtractor> pBGS_;
 	std::vector<CDetectedObject> vec_prev_detections_;
 	std::vector<CDetectedObject> vec_curr_detections_;
+
+	// object detector
+	CDetectorCrosstalk object_detector_;
 
 	// tracking
 	std::vector<CTracker> vec_trackers_;

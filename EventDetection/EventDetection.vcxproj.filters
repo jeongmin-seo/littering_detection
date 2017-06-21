@@ -10,16 +10,25 @@
     </ClCompile>
     <ClCompile Include="dku_types.hpp" />
     <ClCompile Include="fhog.cpp">
-      <Filter>tracker</Filter>
+      <Filter>Tracker</Filter>
     </ClCompile>
     <ClCompile Include="kcftracker.cpp">
-      <Filter>tracker</Filter>
+      <Filter>Tracker</Filter>
     </ClCompile>
     <ClCompile Include="runtracker.cpp">
-      <Filter>tracker</Filter>
+      <Filter>Tracker</Filter>
     </ClCompile>
     <ClCompile Include="hannju_visualize.cpp">
-      <Filter>helpers</Filter>
+      <Filter>Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="mxArray.cpp">
+      <Filter>Object Detector\Matlab Wrapper</Filter>
+    </ClCompile>
+    <ClCompile Include="wrappers.cpp">
+      <Filter>Object Detector\Matlab Wrapper</Filter>
+    </ClCompile>
+    <ClCompile Include="DetectorCrosstalk.cpp">
+      <Filter>Object Detector</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -29,11 +38,17 @@
     <Filter Include="Event Detector">
       <UniqueIdentifier>{1c0c2571-c848-4a07-99ad-af3d05ed06a6}</UniqueIdentifier>
     </Filter>
-    <Filter Include="tracker">
+    <Filter Include="Object Detector">
+      <UniqueIdentifier>{83ed0bac-ae8a-4440-9a2a-1ee38b5b8afb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Helpers">
+      <UniqueIdentifier>{1ad44362-9d09-422f-8245-8f3efe127f04}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tracker">
       <UniqueIdentifier>{f6cf1344-71f4-4f89-83ce-699013f355dd}</UniqueIdentifier>
     </Filter>
-    <Filter Include="helpers">
-      <UniqueIdentifier>{1ad44362-9d09-422f-8245-8f3efe127f04}</UniqueIdentifier>
+    <Filter Include="Object Detector\Matlab Wrapper">
+      <UniqueIdentifier>{bbd02961-cbd9-489d-9abc-69a925045103}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -44,25 +59,37 @@
       <Filter>Event Detector</Filter>
     </ClInclude>
     <ClInclude Include="ffttools.hpp">
-      <Filter>tracker</Filter>
+      <Filter>Tracker</Filter>
     </ClInclude>
     <ClInclude Include="fhog.hpp">
-      <Filter>tracker</Filter>
+      <Filter>Tracker</Filter>
     </ClInclude>
     <ClInclude Include="kcftracker.hpp">
-      <Filter>tracker</Filter>
+      <Filter>Tracker</Filter>
     </ClInclude>
     <ClInclude Include="labdata.hpp">
-      <Filter>tracker</Filter>
+      <Filter>Tracker</Filter>
     </ClInclude>
     <ClInclude Include="recttools.hpp">
-      <Filter>tracker</Filter>
+      <Filter>Tracker</Filter>
     </ClInclude>
     <ClInclude Include="tracker.h">
-      <Filter>tracker</Filter>
+      <Filter>Tracker</Filter>
     </ClInclude>
     <ClInclude Include="haanju_visualize.hpp">
-      <Filter>helpers</Filter>
+      <Filter>Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="mxArray.h">
+      <Filter>Object Detector\Matlab Wrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="sse.hpp">
+      <Filter>Object Detector\Matlab Wrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="wrappers.hpp">
+      <Filter>Object Detector\Matlab Wrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="DetectorCrosstalk.hpp">
+      <Filter>Object Detector</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

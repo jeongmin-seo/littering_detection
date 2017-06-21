@@ -146,6 +146,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="DetectorCrosstalk.cpp" />
     <ClCompile Include="dku_types.hpp" />
     <ClCompile Include="EventDetector.cpp" />
     <ClCompile Include="fhog.cpp" />
@@ -153,9 +154,12 @@
     <ClCompile Include="hannju_visualize.cpp" />
     <ClCompile Include="kcftracker.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="mxArray.cpp" />
     <ClCompile Include="runtracker.cpp" />
+    <ClCompile Include="wrappers.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="DetectorCrosstalk.hpp" />
     <ClInclude Include="EventDetector.h" />
     <ClInclude Include="ffttools.hpp" />
     <ClInclude Include="fhog.hpp" />
@@ -163,8 +167,11 @@
     <ClInclude Include="haanju_visualize.hpp" />
     <ClInclude Include="kcftracker.hpp" />
     <ClInclude Include="labdata.hpp" />
+    <ClInclude Include="mxArray.h" />
     <ClInclude Include="recttools.hpp" />
+    <ClInclude Include="sse.hpp" />
     <ClInclude Include="tracker.h" />
+    <ClInclude Include="wrappers.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

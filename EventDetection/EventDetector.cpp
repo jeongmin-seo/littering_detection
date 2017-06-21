@@ -22,6 +22,7 @@ bool CEventDetector::Init(bool _b_record)
 
 	is_init_ = true;
 	pBGS_ = cv::createBackgroundSubtractorMOG2();
+	object_detector_.Initialize();
 
 	vec_colors_ = hj::GenerateColors(400);
 
@@ -45,6 +46,7 @@ bool CEventDetector::Terminate()
 	vec_mat_frame_buffer_.clear();
 	vec_prev_detections_.clear();
 	pBGS_->clear();
+	object_detector_.Finalize();
 	is_init_ = false;
 	if (b_record_ && video_writer_.isOpened())
 		video_writer_.release();
@@ -56,10 +58,14 @@ bool CEventDetector::Terminate()
 void CEventDetector::Run(const cv::Mat input_frame, const int frame_number)
 {
 	assert(is_init_);
+	printf("Process frame number %d\n", frame_number);
 
 	// backgroud subtraction
-	cv::Mat binray_map;
-	vec_curr_detections_ = BackgroundSubtraction(input_frame, n_cur_frame_index_, binray_map);
+	//cv::Mat binray_map;
+	//vec_curr_detections_ = BackgroundSubtraction(input_frame, n_cur_frame_index_, binray_map);
+
+	// object detection
+	vec_curr_detections_ = object_detector_.Detect(input_frame, frame_number);
 	
 	// tracking
 	vec_tracking_result_ = Tracking(input_frame, frame_number, vec_curr_detections_, vec_trackers_);

@@ -14,13 +14,14 @@ enum OBJECT_CATEGORY
 class CDetectedObject
 {
 public:
-	CDetectedObject() : id(0), category(PEDESTRIAN), frame_index(0), bounding_box(0, 0, 0, 0) {}
+	CDetectedObject() : id(0), category(PEDESTRIAN), score(0.0), frame_index(0), bounding_box(0, 0, 0, 0) {}
 	~CDetectedObject() {}
 
 	int id;
 	OBJECT_CATEGORY category;
+	double score;
 	int frame_index;
-	cv::Rect2d bounding_box; //
+	cv::Rect2d bounding_box;
 };
 
 class CTrackedObject
